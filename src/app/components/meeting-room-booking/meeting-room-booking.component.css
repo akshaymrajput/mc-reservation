@@ -1,0 +1,129 @@
+.heading {
+    font-size: var(--fs-heading);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.options-container {
+    display: flex;
+    gap: 12px;
+    padding: 24px 24px 16px;
+}
+
+.container {
+    box-shadow: var(--bx-shadow-one);
+    border-radius: 8px;
+    background: var(--color-white);
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.selected-date {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.icon-container {
+    width: 25px;
+}
+
+.dateOptionContainer:hover {
+    cursor: pointer;
+}
+
+.date-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--bg-secondary);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: var(--bx-shadow-four);
+    min-width: 220px;
+    width: 100%;
+}
+
+.date-container input {
+    color: lightgray;
+}
+
+.table-container {
+    overflow-x: auto;
+    position: relative;
+    margin-bottom: 40px;
+    border-radius: 0 0 8px 8px;
+}
+
+table {
+    width: 100%;
+    color: var(--color-black-one);
+    border-collapse: collapse;
+    white-space: nowrap;
+    font-size: 14px;
+    border: 1px solid var(--border-secondary);
+}
+
+thead {
+    position: sticky;
+    top: 0;
+}
+
+tr {
+    background: var(--color-white-one);
+}
+
+thead > tr {
+    border: none;
+}
+
+tbody > tr {
+    border: 1px solid var(--border-secondary);
+}
+
+thead th:not(:first-child) {
+    border: 1px solid var(--border-secondary);
+    padding: 0 5px;
+}
+
+tbody td {
+    text-align: center;
+    background: var(--color-white);
+    border: 1px solid var(--border-secondary);
+    padding: 5px;
+}
+
+tbody th {
+    padding: 0 5px;
+}
+
+tbody td button {
+    background-color: #d1e9ff;
+    border-color: #d1e9ff;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    color: #2a7ef2;
+    font-size: 1.3rem;
+}
+
+@media (max-width: 1280px) {
+    .options-container > * {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        font-size: small;
+    }
+}

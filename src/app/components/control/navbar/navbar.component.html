@@ -1,0 +1,104 @@
+<nav>
+    <div class="container" [class.collapsed]="isMobile() || collapsed">
+        <div class="links">
+            <div class="collapse-btn-container">
+                <button class="icon-container" (click)="handleCollapse()">
+                    <img
+                        src="../../../../assets/images/sidebar-toggle.svg"
+                        alt="dashboard"
+                    />
+                </button>
+            </div>
+            <div class="link-container" [routerLink]="['/control/dashboard']">
+                <div class="icon-container">
+                    <img
+                        src="../../../../assets/images/tachometer-alt-solid.svg"
+                        alt="dashboard"
+                    />
+                </div>
+                <a class="link" routerLinkActive="active">Dashboard</a>
+            </div>
+            <div
+                class="link-container"
+                [routerLink]="['/control/guest-room-booking']"
+            >
+                <div class="icon-container">
+                    <img
+                        src="../../../../assets/images/hotel-solid.svg"
+                        alt="guest room booking"
+                    />
+                </div>
+
+                <a class="link" routerLinkActive="active">Guest Room Booking</a>
+            </div>
+            <div
+                class="link-container"
+                [routerLink]="['/control/meeting-room-booking']"
+            >
+                <div class="icon-container">
+                    <img
+                        src="../../../../assets/images/laptop-solid.svg"
+                        alt="meeting room booking"
+                    />
+                </div>
+
+                <a class="link" routerLinkActive="active"
+                    >Meeting Room booking</a
+                >
+            </div>
+        </div>
+        <div class="user-profile">
+            <div
+                class="user-container"
+                [class.optionCollapsed]="
+                    optionCollapsed ? 'optionCollapsed' : ''
+                "
+            >
+                <div
+                    class="profile-pic-container"
+                    (click)="collapsed && handleUserProfileOptionClick()"
+                >
+                    <img
+                        src="../../../../assets/images/user-avatar-grey.svg"
+                        alt="user avatar"
+                    />
+                </div>
+                <div class="info">
+                    <span class="name">akshay.r</span>
+                    <span class="email">{{
+                        "akshay.r@molecularconnections.com"
+                    }}</span>
+                </div>
+                <button
+                    class="user-actions"
+                    (click)="!collapsed && handleUserProfileOptionClick()"
+                >
+                    <img
+                        src="../../../../assets/images/options.svg"
+                        alt="user option"
+                    />
+                </button>
+                <div class="popup">
+                    <button>
+                        <div class="icon-container">
+                            <img
+                                src="../../../../assets/images/resetpwkey.svg"
+                                alt="change password"
+                            />
+                        </div>
+                        <span>Change Password</span>
+                    </button>
+                    <button [routerLink]="['/']">
+                        <div class="icon-container">
+                            <img
+                                src="../../../../assets/images/logout.svg"
+                                alt="logout"
+                            />
+                        </div>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

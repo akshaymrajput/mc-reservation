@@ -1,0 +1,117 @@
+<div class="dashboard">
+    <div class="container">
+        @for(item of dashboardData; track $index) {
+        <ng-container>
+            @if(item.type === 'timeCard') {
+            <div class="time-card card">
+                <div class="time">
+                    {{ item.time }}
+                </div>
+                <span class="date"> {{ item.date }}</span>
+            </div>
+            } @if(item.type === 'bookingCount') {
+            <div class="booking-count card">
+                <p>
+                    {{ item.message }}
+                </p>
+            </div>
+            } @if(item.type === 'importantLinks') {
+            <div class="links-container card">
+                <div class="heading">
+                    <div class="icon-container">
+                        <img src="../../../assets/images/link.svg" alt="link" />
+                    </div>
+                    <span class="font-bold">Important Molcon Links</span>
+                </div>
+                <div class="links">
+                    <!-- Loop through links -->
+                    @for(link of item.links; track $index) {
+                    <a target="_blank" class="link" [href]="link.url">
+                        <div class="icon-container">
+                            <img [src]="link.imageSrc" alt="" />
+                        </div>
+                        <span class="link-text">{{ link.name }}</span>
+                    </a>
+                    }
+                </div>
+            </div>
+            } @if(item.type === 'molconContacts') {
+            <div class="molcon card">
+                <div class="heading">
+                    <div class="icon-container">
+                        <img src="./assets/images/phone.svg" alt="call" />
+                    </div>
+                    <span>Molcon Contacts</span>
+                </div>
+                <div class="contacts">
+                    @for(contact of item.contacts; track $index) {
+                    <div class="contact">
+                        <label>{{ contact.category }}</label>
+                        <ul>
+                            @for(subContact of contact.contacts; track $index) {
+                            <li>
+                                <div class="contact">
+                                    <span>{{
+                                        subContact.name
+                                            ? subContact.name + " - "
+                                            : ""
+                                    }}</span>
+                                    <span>{{ subContact.number }}</span>
+                                </div>
+                            </li>
+                            } @if(contact.numbers) { @for(num of
+                            contact.numbers; track num) {
+                            <li>
+                                {{ contact.numbers }}
+                            </li>
+                            } } @if(contact.emails) { @for(email of
+                            contact.emails; track email) {
+                            <li>
+                                {{ contact.emails }}
+                            </li>
+                            } }
+                        </ul>
+                    </div>
+                    }
+                </div>
+            </div>
+            } @if(item.type === 'emergencyContacts') {
+            <div class="emergency card">
+                <div class="heading">
+                    <div class="icon-container">
+                        <img src="./assets/images/phone.svg" alt="call" />
+                    </div>
+                    <span>Emergency Contacts</span>
+                </div>
+                <div class="contacts">
+                    @for(contact of item.contacts; track $index) {
+                    <div class="contact">
+                        <label>{{ contact.category }}</label>
+                        <ul>
+                            @for(subContact of contact.contacts; track $index) {
+                            <li>
+                                <div class="contact">
+                                    <span>{{
+                                        subContact.name
+                                            ? subContact.name + " - "
+                                            : ""
+                                    }}</span>
+                                    <span>{{
+                                        subContact.location
+                                            ? subContact.location + " - "
+                                            : ""
+                                    }}</span>
+                                    <span>{{ subContact.number }}</span>
+                                </div>
+                            </li>
+                            }
+                        </ul>
+                    </div>
+                    }
+                </div>
+            </div>
+            }
+        </ng-container>
+        }
+    </div>
+</div>

@@ -1,0 +1,250 @@
+<div class="guest-room-booking">
+    <div class="container">
+        <div class="heading">Guest Room Booking</div>
+        <div class="form-container">
+            <form (submit)="handleSubmit($event)">
+                <div class="availability">
+                    <div class="input-container">
+                        <div
+                            class="drop-down"
+                            (click)="handleCityDropdownClick()"
+                        >
+                            <div class="selected">
+                                <div class="selected-city">
+                                    <div class="icon-container">
+                                        <img
+                                            src="../../../assets/images/city.svg"
+                                            alt="city"
+                                        />
+                                    </div>
+                                    <div class="city-name">Bangalore</div>
+                                </div>
+                                <div class="icon-container caret">
+                                    <img
+                                        src="../../../assets/images/caret.svg"
+                                        alt="caret"
+                                    />
+                                </div>
+                            </div>
+                            <div
+                                class="list"
+                                [style]="
+                                    cityDropDownOpen
+                                        ? 'display: block'
+                                        : 'display:none'
+                                "
+                            >
+                                <div class="list-heading">SELECT CITY</div>
+                                <div class="items">
+                                    @for(item of cityDropDownData; track $index)
+                                    {
+                                    <div class="item">
+                                        <span>{{ item }}</span>
+                                        <div class="icon-container">
+                                            <img
+                                                src="../../../assets/images/check.svg"
+                                                alt="selected"
+                                            />
+                                        </div>
+                                    </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="start-date">
+                            <label for="start">
+                                <div class="icon-container">
+                                    <img
+                                        src="../../../assets/images/calender.svg"
+                                        alt="city"
+                                    />
+                                </div>
+                                <span> Check In Date </span>
+                            </label>
+                            <input
+                                placeholder="Check In Date"
+                                type="date"
+                                id="start"
+                            />
+                        </div>
+                        <div class="end-date">
+                            <label for="start">
+                                <div class="icon-container">
+                                    <img
+                                        src="../../../assets/images/calender.svg"
+                                        alt="city"
+                                    />
+                                </div>
+                                <span> Check Out Date </span>
+                            </label>
+                            <input
+                                placeholder="Check Out Date"
+                                type="date"
+                                id="end"
+                            />
+                        </div>
+                    </div>
+                    <div class="submit-container">
+                        <button>
+                            <div class="icon-container">
+                                <img
+                                    src="../../../assets/images/search.svg"
+                                    alt="search"
+                                />
+                            </div>
+                            <span>Check Availability</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="note">
+            <p>
+                Note: The recommended check-in and check-out window is from 8 AM
+                to 8 PM. If you plan to book for a time outside of this range,
+                kindly get in touch with the administrative team to request any
+                required accommodations.
+            </p>
+        </div>
+
+        <div class="map-and-contacts-container">
+            <div class="map-container">
+                <div class="map-heading">
+                    <div class="icon-container">
+                        <img src="../../../assets/images/map.svg" alt="map" />
+                    </div>
+                    <span>Distance between office and Guest House</span>
+                </div>
+                <div class="map-box">MAP AREA</div>
+            </div>
+
+            @for(item of guestRoomData; track $index) { @if(item.type ===
+            'emergencyContacts') {
+            <div class="contacts-container">
+                <div class="contacts-heading">
+                    <div class="icon-container">
+                        <img src="./assets/images/phone.svg" alt="call" />
+                    </div>
+                    <span>Emergency Contacts</span>
+                </div>
+                <div class="contacts">
+                    @for(contact of item.contacts; track $index) {
+                    <div class="contact">
+                        <label>{{ contact.category }}</label>
+                        <ul>
+                            @for(subContact of contact.contacts; track $index) {
+                            <li>
+                                <div class="contact">
+                                    <span>{{
+                                        subContact.name
+                                            ? subContact.name + " - "
+                                            : ""
+                                    }}</span>
+                                    <span>{{
+                                        subContact.location
+                                            ? subContact.location + " - "
+                                            : ""
+                                    }}</span>
+                                    <span>{{ subContact.number }}</span>
+                                </div>
+                            </li>
+                            }
+                        </ul>
+                    </div>
+                    }
+                </div>
+            </div>
+            } }
+        </div>
+
+        <hr />
+
+        <div class="booking-container">
+            <div class="booking-header">
+                <div class="title">
+                    <span class="main">Your Bookings</span>
+                    <span class="sub">Shown 1 - 0 of 0</span>
+                </div>
+                <div class="sort-container">
+                    <div
+                        class="results-per-page drop-down"
+                        (click)="handleResultsFilterDropdownClick()"
+                    >
+                        <span class="label">Results per page:</span>
+                        <div class="selected">
+                            <span class="text">10</span>
+                            <div class="icon-container">
+                                <img
+                                    src="../../../assets/images/caret.svg"
+                                    alt="caret"
+                                />
+                            </div>
+                        </div>
+                        <div
+                            class="list"
+                            [style]="
+                                resultsDropDownOpen
+                                    ? 'display: block'
+                                    : 'display: none'
+                            "
+                        >
+                            <div class="items">
+                                @for(item of resultsDropDownData; track $index)
+                                {
+                                <div class="item">
+                                    <span>{{ item }}</span>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="sort-by drop-down"
+                        (click)="handleSortFilterDropdownClick()"
+                    >
+                        <span class="label">Sort by:</span>
+                        <div class="selected">
+                            <span class="text">Recent Bookings</span>
+                            <div class="icon-container">
+                                <img
+                                    src="../../../assets/images/caret.svg"
+                                    alt="caret"
+                                />
+                            </div>
+                        </div>
+                        <div
+                            class="list"
+                            [style]="
+                                sortDropDownOpen
+                                    ? 'display: block'
+                                    : 'display: none'
+                            "
+                        >
+                            <div class="items">
+                                @for(item of sortDropDownData; track $index) {
+                                <div class="item">
+                                    <span>{{ item }}</span>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        @for(item of tableData; track $index) {
+                        <th>{{ item }}</th>
+                        }
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="data">
+                <div class="nodata">No Data</div>
+            </div>
+        </div>
+    </div>
+</div>

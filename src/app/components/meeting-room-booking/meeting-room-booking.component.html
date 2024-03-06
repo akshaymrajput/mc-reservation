@@ -1,0 +1,92 @@
+<div class="meeting-room-booking">
+    <div class="heading">Meeting Room Booking</div>
+    <div class="container">
+        <div class="meeting-table-container">
+            <div class="options-container">
+                <div class="cityOptionContainer">
+                    <span>Select City</span>
+                    <app-dropdown
+                        [items]="dropDownData.city"
+                        [selectedItem]="selectedCityItem"
+                        (selectionChange)="onCitySelectionChange($event)"
+                    ></app-dropdown>
+                </div>
+                <div class="buildingOptionContainer">
+                    <span>Select Building</span>
+                    <app-dropdown
+                        [items]="dropDownData.building"
+                        [selectedItem]="selectedBuildingItem"
+                        (selectionChange)="onBuildingSelectionChange($event)"
+                    ></app-dropdown>
+                </div>
+                <div class="floorOptionContainer">
+                    <span>Filter by Floor</span>
+                    <app-dropdown
+                        [items]="dropDownData.floor"
+                        [selectedItem]="selectedFloorItem"
+                        (selectionChange)="onFloorSelectionChange($event)"
+                    ></app-dropdown>
+                </div>
+                <div class="dateOptionContainer">
+                    <span>Select Date</span>
+                    <div class="date-container">
+                        <div class="icon-container">
+                            <img
+                                src="../../../assets/images/calender.svg"
+                                alt=""
+                            />
+                        </div>
+                        <input type="date" />
+                    </div>
+                </div>
+            </div>
+            <div class="selected-date">Tuesday, March 5, 2024</div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            @for(floor of floorDetails; track $index) {
+
+                            <th [attr.colspan]="floor[1].rooms.length">
+                                {{ floor[1].name }}
+                            </th>
+
+                            }
+                        </tr>
+                        <tr>
+                            <th></th>
+                            @for(floor of floorDetails; track $index) {
+                            @for(room of floor[1].rooms; track $index) {
+                            <th>{{ room }}</th>
+                            } }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(item of meetingRoomTableData.timeSlot; track
+                        $index) {
+                        <tr>
+                            <th>{{ item }}</th>
+                            @for(floor of floorDetails; track $index) {
+                            <ng-container>
+                                @for(room of floor[1].rooms; track $index) {
+                                <td>
+                                    <button (click)="handleRoomBookClick()">
+                                        +
+                                    </button>
+                                </td>
+                                }
+                            </ng-container>
+                            }
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if(shouldShowModal) {
+<app-room-book (close)="handleClose()"></app-room-book>
+}

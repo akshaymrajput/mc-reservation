@@ -1,0 +1,71 @@
+<div class="login-wrapper">
+    <div class="container">
+        <main>
+            <div class="login-box">
+                <div class="partition-a">
+                    <div class="login-container">
+                        <div class="heading-container">
+                            <div class="img-container">
+                                <img
+                                    src="../../../assets/images/key.svg"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="header">
+                                <div class="heading">Log into your account</div>
+                                <div class="sub-heading">
+                                    Enter your LDAP/System Credentials
+                                </div>
+                            </div>
+                        </div>
+                        <form (submit)="onSubmit($event)">
+                            <div class="username-container">
+                                <input
+                                    type="text"
+                                    class="username"
+                                    placeholder="Username"
+                                />
+                                <div class="icon-container">
+                                    <img
+                                        src="../../../assets/images/user.svg"
+                                        alt="username icon"
+                                    />
+                                </div>
+                            </div>
+                            <div class="password-container">
+                                <input
+                                    type="password"
+                                    class="password"
+                                    placeholder="Password"
+                                />
+                                <div class="icon-container">
+                                    <img
+                                        src="../../../assets/images/lock.svg"
+                                        alt="password icon"
+                                    />
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <button [routerLink]="['/control/dashboard']">
+                                    Login
+                                </button>
+                            </div>
+                            <div class="pw-reset">
+                                <a href="#">Lost Password?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="partition-b">
+                    <div class="img-container">
+                        <img
+                            src="../../../assets/images/login-img.png"
+                            alt=""
+                        />
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <app-login-footer></app-login-footer>
+</div>

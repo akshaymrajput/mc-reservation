@@ -1,0 +1,186 @@
+.login-wrapper {
+    min-height: calc(
+        100vh - 72px
+    ); /*note to self: 72px here is what we subtract for the sticky header*/
+    background: var(--color-white-one);
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    max-width: 1280px;
+    padding: 64px 0;
+}
+
+.login-box {
+    width: 960px;
+    height: 480px;
+    display: flex;
+    border: 1px solid var(--border-secondary);
+    box-shadow: var(--bx-shadow-two);
+    border-radius: 8px;
+    background: var(--color-white-two);
+}
+
+.login-box > * {
+    flex: 1;
+}
+
+.login-container .img-container {
+    width: 60px;
+}
+
+.partition-a {
+    display: flex;
+    justify-content: center;
+    border-right: 1px solid var(--border-secondary);
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+}
+
+.login-container .heading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.heading-container .header {
+    width: 100%;
+    text-align: center;
+}
+
+.heading {
+    font-size: 28px;
+    color: var(--color-black-one);
+    font-weight: bold;
+}
+
+.sub-heading {
+    color: var(--color-black-two);
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #ced4da;
+    background: var(--color-white);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+form .username-container,
+form .password-container {
+    position: relative;
+}
+
+form .icon-container {
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+form img[alt*="icon"] {
+    object-fit: contain;
+}
+
+input:focus,
+button:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem #007bff40;
+}
+
+.button-container {
+    display: flex;
+    height: 40px;
+}
+
+.button-container button {
+    flex: 1;
+    padding: 5px;
+    background: var(--color-blue-one);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.button-container button:hover,
+.button-container button:active,
+.button-container button:focus {
+    background: var(--bg-primary);
+}
+
+.pw-reset {
+    margin-top: 12px;
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.pw-reset a:hover {
+    text-decoration: none;
+    color: #a71d2a;
+}
+
+.partition-b .img-container {
+    width: 100%;
+    height: 100%;
+}
+
+.partition-b .img-container img {
+    object-fit: contain;
+}
+
+@media (min-width: 576px) and (max-width: 976px) {
+    .login-box {
+        width: 420px;
+        height: 480px;
+    }
+
+    .login-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .partition-b {
+        display: none;
+    }
+
+    .partition-b .img-container {
+        width: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .login-box {
+        width: 350px;
+        height: 480px;
+    }
+
+    .login-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .partition-b {
+        display: none;
+    }
+
+    .partition-b .img-container {
+        width: 0;
+    }
+}

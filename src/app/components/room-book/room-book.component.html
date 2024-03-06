@@ -1,0 +1,67 @@
+<div class="backdrop" (click)="onClose()"></div>
+<div class="booking-box">
+    <div class="box-header">
+        <span>Meeting Room Reservation</span>
+        <button (click)="onClose()">X</button>
+    </div>
+    <div class="box-body">
+        <div class="row-1">
+            <div class="dropdown-container room">
+                <span>Select Room</span>
+                <app-dropdown
+                    [items]="dropDownData.room"
+                    [selectedItem]="selectedRoom"
+                    (selectionChange)="onRoomSelectionChange($event)"
+                ></app-dropdown>
+            </div>
+            <div class="date">
+                <span>Select Date</span>
+                <input type="date" />
+            </div>
+        </div>
+        <div class="row-2">
+            <div class="dropdown-container start">
+                <span>Start Time</span>
+                <app-dropdown
+                    [items]="dropDownData.time"
+                    [selectedItem]="selectedStartTime"
+                    (selectionChange)="onStartTimeSelectionChange($event)"
+                ></app-dropdown>
+            </div>
+            <div class="dropdown-container end">
+                <span>End Time</span>
+                <app-dropdown
+                    [items]="dropDownData.time"
+                    [selectedItem]="selectedEndTime"
+                    (selectionChange)="onEndTimeSelectionChange($event)"
+                ></app-dropdown>
+            </div>
+        </div>
+
+        <div class="row-3">
+            <div class="attendees">
+                <span>No. of Attendees (capacity: 4)</span>
+                <input
+                    type="number"
+                    placeholder="Enter no. of Attendees"
+                    min="1"
+                    max="4"
+                />
+            </div>
+
+            <div class="agenda">
+                <span>Agenda</span>
+                <textarea
+                    id="agenda"
+                    cols="30"
+                    rows="4"
+                    placeholder="Enter Agenda"
+                ></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="box-footer actions">
+        <button (click)="onClose()">Cancel</button>
+        <button (click)="onClose()">Submit</button>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+.control {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.control-pages {
+    min-width: calc(100vw - 275px);
+    flex-grow: 1;
+    /* width: 100%; */
+    padding: 30px 24px 24px;
+    background: #fcfcfd;
+}
+
+.control-pages > hr {
+    margin-top: 20px;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    margin-top: 20px;
+    bottom: 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .control {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .control-pages {
+        min-width: 100vw;
+        min-height: calc(100vh - 83px);
+        padding: 10px;
+    }
+
+    .footer {
+        margin-bottom: 83px;
+    }
+}

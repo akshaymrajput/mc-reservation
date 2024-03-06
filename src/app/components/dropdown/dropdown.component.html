@@ -1,0 +1,25 @@
+<div class="dropdown" (click)="handleClick()">
+    <div class="selected">
+        <div class="label">
+            @if(selectedItem?.icon) {
+            <div class="icon-container">
+                <img [src]="selectedItem?.icon" alt="label icon" />
+            </div>
+            }
+            <span>{{ selectedItem?.text }}</span>
+        </div>
+        <div class="icon-container caret">
+            <img src="./assets/images/caret.svg" alt="caret icon" />
+        </div>
+    </div>
+    <div
+        class="dropdown-list"
+        [style]="optionOpen ? 'display: block' : 'display: none'"
+    >
+        @for(item of items; track $index) {
+        <div class="dropdown-list-item" (click)="selectItem(item)">
+            <span>{{ item.text }}</span>
+        </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,29 @@
+.header {
+    background: var(--color-white);
+    height: 72px;
+    z-index: 10;
+    position: sticky;
+    box-shadow: var(--bx-shadow-four);
+    border-bottom: 1px solid var(--primary-color);
+    top: 0;
+}
+
+.header .container {
+    padding: 0 24px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    width: 150px;
+}
+
+.logo-container img {
+    object-fit: contain;
+}
+
+.logo-container .logo-2 {
+    height: 40px;
+}

@@ -1,0 +1,48 @@
+<footer class="footer">
+    <div class="container">
+        <div class="links-box">
+            <div class="footer-cols">
+                @for(item of footerData; track item.title) { @if(!item.items &&
+                item.subItems) {
+                <div class="footer-col">
+                    <span class="sub-title">{{ item.title }}</span>
+                    <p>{{ item.content }}</p>
+                    @for(subItem of item.subItems; track $index) {
+                    <span class="sub-title">{{ subItem.title }}</span>
+                    <p>{{ subItem.content }}</p>
+                    }
+                </div>
+                } @else {
+                <div class="footer-col">
+                    <span class="sub-title">{{ item.title }}</span>
+                    <ul class="">
+                        @for(subItem of item.items; track subItem.link) {
+                        <li>
+                            <a [href]="subItem.link" target="_blank">{{
+                                subItem.label
+                            }}</a>
+                        </li>
+                        }
+                    </ul>
+                </div>
+                } }
+            </div>
+        </div>
+        <div class="copyright-box">
+            <div>
+                Copyright © 2024 Molecular Connections Pvt. Ltd. All rights
+                reserved.
+            </div>
+            <div class="social-links">
+                @for(copyrightLink of copyrightLinks; track copyrightLink.url) {
+                <a href="#" class="social-link">
+                    <img
+                        src="{{ copyrightLink.url }}"
+                        alt="{{ copyrightLink.alt }}"
+                    />
+                </a>
+                }
+            </div>
+        </div>
+    </div>
+</footer>
