@@ -9,19 +9,6 @@ import { Component } from "@angular/core";
 })
 export class LoginFooterComponent {
     footerData: any = [
-        // {
-        //     title: "Corporate Address:",
-        //     content:
-        //         "Heritage Building, #59/2, Kaderanahalli, 100 feet road, Banashankari 2nd Stage, Bangalore 560070, Karnataka, India",
-        // },
-        // {
-        //     title: "Tel:",
-        //     content: "+91 80 2669 0145",
-        // },
-        // {
-        //     title: "Email:",
-        //     content: "info@molecularconnections.com",
-        // },
         {
             title: "Corporate Address:",
             content:
