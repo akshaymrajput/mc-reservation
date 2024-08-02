@@ -17,19 +17,19 @@ export class GuestRoomBookingComponent {
                     category: "Police",
                     contacts: [
                         {
-                            location: "Kumarswamy layout",
-                            number: "080-2294-2567",
+                            location: "Downtown",
+                            number: "080-0000-0001",
                         },
                         {
-                            location: "Banglore Women Police",
-                            number: "080-22943225",
+                            location: "City Women Police",
+                            number: "080-0000-0002",
                         },
                     ],
                 },
                 {
                     category: "Hospital",
                     contacts: [
-                        { name: "Sagar Hospital", number: "080-6955-5555" },
+                        { name: "City Hospital", number: "080-0000-0003" },
                     ],
                 },
                 {

@@ -34,7 +34,7 @@ export class MeetingRoomBookingComponent implements OnInit {
 
         building: [
             {
-                text: "Gurudas Heritage",
+                text: "City Building",
                 value: 1,
                 icon: "../../../assets/images/city.svg",
             },

@@ -12,15 +12,15 @@ export class LoginFooterComponent {
         {
             title: "Corporate Address:",
             content:
-                "Heritage Building, #59/2, Kaderanahalli, 100 feet road, Banashankari 2nd Stage, Bangalore 560070, Karnataka, India",
+                "Sample Building, #123, Example Street, 100 feet road, Example City 123456, State, Country",
             subItems: [
                 {
                     title: "Tel:",
-                    content: "+91 80 2669 0145",
+                    content: "+91 80 0000 0000",
                 },
                 {
                     title: "Email:",
-                    content: "info@molecularconnections.com",
+                    content: "info@example.com",
                 },
             ],
         },

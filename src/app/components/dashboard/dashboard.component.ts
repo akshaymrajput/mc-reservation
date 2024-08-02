@@ -19,28 +19,28 @@ export class DashboardComponent {
             contacts: [
                 {
                     category: "Office Landline",
-                    numbers: ["080-2669 0145"],
+                    numbers: ["080-0000-0000"],
                 },
                 {
                     category: "Admin team",
                     contacts: [
-                        { name: "Mr.Bhagwan", number: "98805 48147" },
-                        { name: "Mr.Veerendra", number: "96328 92050" },
-                        { name: "Mr.Haridas", number: "98806 61145" },
-                        { name: "Mrs.Nethra", number: "93801 58989" },
+                        { name: "Mr.Doe", number: "90000 00000" },
+                        { name: "Mr.Smith", number: "90000 00001" },
+                        { name: "Mr.Jones", number: "90000 00002" },
+                        { name: "Mrs.Brown", number: "90000 00003" },
                     ],
                 },
                 {
                     category: "Admin Email",
-                    emails: ["reservations@molecularconnections.com"],
+                    emails: ["admin@company.com"],
                 },
                 {
                     category: "Maintenance team",
-                    numbers: ["96066 89915"],
+                    numbers: ["90000 00004"],
                 },
                 {
                     category: "Security team",
-                    contacts: [{ name: "Jagadish", number: "77957 61003" }],
+                    contacts: [{ name: "John Doe", number: "90000 00005" }],
                 },
             ],
         },
@@ -51,19 +51,19 @@ export class DashboardComponent {
                     category: "Police",
                     contacts: [
                         {
-                            location: "Kumarswamy layout",
-                            number: "080-2294-2567",
+                            location: "Downtown",
+                            number: "080-0000-0001",
                         },
                         {
-                            location: "Banglore Women Police",
-                            number: "080-22943225",
+                            location: "City Women Police",
+                            number: "080-0000-0002",
                         },
                     ],
                 },
                 {
                     category: "Hospital",
                     contacts: [
-                        { name: "Sagar Hospital", number: "080-6955-5555" },
+                        { name: "City Hospital", number: "080-0000-0003" },
                     ],
                 },
                 {
@@ -79,7 +79,7 @@ export class DashboardComponent {
         },
         {
             type: "bookingCount",
-            message: `Hello, akshay.r you have no conference bookings today and no upcoming guest room bookings.`,
+            message: `Hello, john.doe you have no conference bookings today and no upcoming guest room bookings.`,
         },
         {
             type: "importantLinks",
